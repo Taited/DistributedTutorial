@@ -1,0 +1,27 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Distributed Debug",
+            "type": "python",
+            "request": "launch",
+            "program": "/home/tracy/anaconda3/envs/open-mmlab/lib/python3.8/site-packages/torch/distributed/launch.py", //可执行文件路径
+            "console": "integratedTerminal",
+            "args": [
+                "--nproc_per_node=2",
+                "cifar100_ddp.py"
+            ],
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "0,1"
+            },
+        },
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+    ]
+}
