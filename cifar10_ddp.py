@@ -68,7 +68,7 @@ def configs():
     parser.add_argument('--data_size', default=100, type=int)
     parser.add_argument('--print_times', default=10, type=int)
     parser.add_argument('--print_rank', default=0, type=int)
-    parser.add_argument('--lr', default=1.5 * 0.001, type=float, help='Learning rate')
+    parser.add_argument('--lr', default=0.001, type=float, help='Learning rate')
     args = parser.parse_args()
     return args
 
@@ -152,7 +152,7 @@ def main(cfg):
                 current_time, epoch, logger['train_loss'], logger['valid_loss']))
             print()
             
-            writter.add_scalars('ddp_wo_syncBn/loss', logger, epoch)
+            writter.add_scalars('ddp_wo_syncBn_lr0_001/loss', logger, epoch)
                 
         
 if __name__ == '__main__':

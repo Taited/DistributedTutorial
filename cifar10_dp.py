@@ -5,7 +5,6 @@ import argparse
 import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader
-from torch.utils.data.distributed import DistributedSampler
 from torchvision import datasets
 import torchvision.transforms as transforms
 from torch.utils.tensorboard import SummaryWriter
@@ -62,7 +61,7 @@ def configs():
     parser = argparse.ArgumentParser()
     parser.add_argument('--local_rank', default=0, type=int,
                      help='node rank for distributed training')
-    parser.add_argument('--batch_size', default=16, type=int)
+    parser.add_argument('--batch_size', default=32, type=int)  # since we are using 2 gpus, there should be a little bigger batch_size
     parser.add_argument('--epoch', default=30, type=int)
     parser.add_argument('--input_size', default=256 * 256, type=int)
     parser.add_argument('--data_size', default=100, type=int)

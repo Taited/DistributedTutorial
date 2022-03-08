@@ -5,11 +5,11 @@
             "name": "Python: Distributed Debug",
             "type": "python",
             "request": "launch",
-            "program": "/your_anaconda3/envs/your_envs/lib/python3.8/site-packages/torch/distributed/launch.py",
+            "program": "/home/tracy/anaconda3/envs/open-mmlab/lib/python3.8/site-packages/torch/distributed/launch.py",
             "console": "integratedTerminal",
             "args": [
                 "--nproc_per_node=2",
-                "cifar100_ddp.py"
+                "cifar10_ddp_syncBN.py"
             ],
             "env": {
                 "CUDA_VISIBLE_DEVICES": "0,1"
